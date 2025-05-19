@@ -103,6 +103,7 @@ GEM
     dotenv (3.1.8)
     drb (2.2.1)
     ed25519 (1.4.0)
+    erb (5.0.1)
     erubi (1.13.1)
     et-orbi (1.2.11)
       tzinfo
@@ -167,6 +168,8 @@ GEM
     nio4r (2.7.4)
     nokogiri (1.18.8-x64-mingw-ucrt)
       racc (~> 1.4)
+    nokogiri (1.18.8-x86_64-linux-gnu)
+      racc (~> 1.4)
     orm_adapter (0.5.0)
     ostruct (0.6.1)
     parallel (1.27.0)
@@ -229,7 +232,8 @@ GEM
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
     rake (13.2.1)
-    rdoc (6.13.1)
+    rdoc (6.14.0)
+      erb
       psych (>= 4.0.0)
     regexp_parser (2.10.0)
     reline (0.6.1)
@@ -245,14 +249,14 @@ GEM
     rspec-mocks (3.13.4)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
-    rspec-rails (6.0.4)
-      actionpack (>= 6.1)
-      activesupport (>= 6.1)
-      railties (>= 6.1)
-      rspec-core (~> 3.12)
-      rspec-expectations (~> 3.12)
-      rspec-mocks (~> 3.12)
-      rspec-support (~> 3.12)
+    rspec-rails (8.0.0)
+      actionpack (>= 7.2)
+      activesupport (>= 7.2)
+      railties (>= 7.2)
+      rspec-core (~> 3.13)
+      rspec-expectations (~> 3.13)
+      rspec-mocks (~> 3.13)
+      rspec-support (~> 3.13)
     rspec-support (3.13.3)
     rubocop (1.75.6)
       json (~> 2.3)
@@ -340,6 +344,7 @@ GEM
 
 PLATFORMS
   x64-mingw-ucrt
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap
@@ -354,7 +359,7 @@ DEPENDENCIES
   propshaft
   puma (>= 5.0)
   rails (~> 8.0.2)
-  rspec-rails (~> 6.0.0)
+  rspec-rails (~> 8.0.0)
   rubocop-rails-omakase
   solid_cable
   solid_cache
