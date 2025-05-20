@@ -49,7 +49,7 @@ gem "thruster", require: false
 # gem "image_processing", "~> 1.2"
 # Added RSpec for testing
 group :development, :test do
-  gem "rspec-rails", "~> 6.0.0"
+  gem "rspec-rails", "~> 8.0.0"
 end
 
 
