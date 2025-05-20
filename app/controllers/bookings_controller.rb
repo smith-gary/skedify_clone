@@ -20,16 +20,29 @@ class BookingsController < ApplicationController
   end
 
   # POST /bookings or /bookings.json
-  def create
-    @booking = Booking.new(booking_params)
+  # def create
+  #   @booking = Booking.new(booking_params)
 
-    respond_to do |format|
+  #   respond_to do |format|
+  #     if @booking.save
+  #       format.html { redirect_to @booking, notice: "Booking was successfully created." }
+  #       format.json { render :show, status: :created, location: @booking }
+  #     else
+  #       format.html { render :new, status: :unprocessable_entity }
+  #       format.json { render json: @booking.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
+
+  def create
+    if @availability.booking.present?
+      redirect_to availabilities_path, alert: "Slot already booked."
+    else
+      @booking = Booking.new(booking_params)
       if @booking.save
-        format.html { redirect_to @booking, notice: "Booking was successfully created." }
-        format.json { render :show, status: :created, location: @booking }
+        redirect_to bookings_path, notice: "Appointment booked."
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @booking.errors, status: :unprocessable_entity }
+        render :new
       end
     end
   end
