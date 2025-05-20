@@ -4,6 +4,14 @@
 
 <h1>Availabilities</h1>
 
+<div data-controller="calendar">
+  <% @availabilities.each do |slot| %>
+    <div data-calendar-target="slot" data-action="click->calendar#select">
+      <% slot.start_time %> - <% slot.end_time %>
+    </div>
+  <% end %>
+</div>
+
 <div id="availabilities">
   <% @availabilities.each do |availability| %>
     <%= render availability %>
