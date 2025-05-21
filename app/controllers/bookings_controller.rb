@@ -13,6 +13,7 @@ class BookingsController < ApplicationController
   # GET /bookings/new
   def new
     @booking = Booking.new
+    @availability = Availability.find(params[:availability_id]) if params[:availability_id]
   end
 
   # GET /bookings/1/edit
@@ -35,6 +36,7 @@ class BookingsController < ApplicationController
   # end
 
   def create
+     @availability = Availability.find(params[:availability_id]) # assign it here
     if @availability.booking.present?
       redirect_to availabilities_path, alert: "Slot already booked."
     else

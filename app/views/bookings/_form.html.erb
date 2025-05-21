@@ -11,10 +11,11 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :availability_id, style: "display: block" %>
-    <%= form.text_field :availability_id %>
-  </div>
+  <%# <div> %>
+    <%# <%= form.label :availability_id, style: "display: block" %>
+    <%# <%= form.text_field :availability_id %> 
+    <%= form.hidden_field :availability_id, value: @availability&.id %>
+  <%# </div> %>
 
   <div>
     <%= form.label :client_email, style: "display: block" %>
