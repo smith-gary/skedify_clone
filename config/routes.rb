@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :bookings
-  devise_for :users
+  resources :availabilities # Availabilities routes
+  resources :bookings # Booking routes
+  devise_for :users # Devise user auth routes
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -15,7 +16,7 @@ Rails.application.routes.draw do
   # root "posts#index"
   root "home#index"
 
-  namespace :admin do
+  namespace :admin do    # Admin namespace for users and bookings
     resources :users
     resources :bookings
   end

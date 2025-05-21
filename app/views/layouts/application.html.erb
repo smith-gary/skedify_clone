@@ -18,7 +18,9 @@
     <link rel="apple-touch-icon" href="/icon.png">
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
-    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%# <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%# <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %> 
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload", media: "all" %>
   </head>
 
   <body>
@@ -28,7 +30,7 @@
           Welcome <% current_user.email %> |
           <% link_to "Logout", destroy_user_session_path, method: :delete %>
         </p>
-      <% elese %>
+      <% else %>
         <%= link_to "Login", new_user_session_path %> |
         <%= link_to "Register", new_user_registration_path %>
       <% end %>

@@ -24,6 +24,10 @@ gem "devise", "~> 4.9"
 gem "fiddle", "~> 1.0"
 # Environment variables
 gem "dotenv-rails", "~> 3.1.8"
+# Tailwind
+gem "tailwindcss-rails", "~> 4.2.3"
+gem "tailwindcss-ruby", "~> 4.0"
+
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 
